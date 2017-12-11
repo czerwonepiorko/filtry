@@ -1,18 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="googlebot" content="noindex, nofollow">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" type="text/css" href="main.css">
-    <script type="text/javascript" href="main.js"></script>
-  <title>Filtry</title>
+    <meta charset="UTF-8">
+    <title>Image filters</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 </head>
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
 
- <label>Załaduj zdjęcie:</label><br/>
-<input type="file" id="imageLoader" name="imageLoader"/>
-<canvas id="imageCanvas"></canvas>
+                <ul>
+                    <li><input id="imageLoader" type="file" /></li>
+                    <li>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-md-5">
+                <canvas id="imageCanvas" width="550" height="600"></canvas>
+            </div>
+            <div class="col-md-5">
+
+              <!--  <img id="image" src="img/vitalic_voyager.jpeg" width="550" height="600" /> -->
+
+
+                <!-- <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
+                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
+                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
+                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
+                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
+                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
+                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
+                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
+                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
+                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
+                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button> -->
+
+            </div>
+        </div>
+        <!-- <input id="reset" class="btn btn-danger" type="button" value="Reset" /> -->
+      <button onclick="Reset()" class="btn btn-warning" value="Reset">Reset</button>
+        <button onclick="btnGrayscale();" class="btn btn-info">Grayscale</button>
+        <button onclick="btnBrightness();" class="btn btn-info">Brightness</button>
+        <button onclick="btnThreshold();" class="btn btn-info">Threshold</button>
+        <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-success">USREDNIAJACY</button>
+        <button onclick="btnCustom(SOBEL_POZIOMY);" class="btn btn-success">SOBEL_POZIOMY</button>
+        <button onclick="btnCustom(SOBEL_PIONOWY);" class="btn btn-success">SOBEL_PIONOWY</button>
+        <button onclick="btnCustom(KOLOWY);" class="btn btn-danger">DYLATACJA</button>
+        <!-- <button onclick="btnCustom(LP2);" class="btn btn-info">LP2</button> -->
+        <!-- <button onclick="btnCustom(LP3);" class="btn btn-info">LP3</button> -->
+    </div>
+
+    <script src="js/filters2.js" type="application/javascript"></script>
 
 </body>
+</html>
