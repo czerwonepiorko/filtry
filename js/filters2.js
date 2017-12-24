@@ -60,7 +60,7 @@ var btnThreshold = function () {
     }
     context.putImageData(imgData, 0, 0);
 };
-
+var opaque = false;
 //USREDNIAJACY
 var btnCustom = function(filterArray){
     var imgData = context.getImageData(0, 0, canvas.width, canvas.height);
@@ -80,6 +80,7 @@ var btnCustom = function(filterArray){
 
     var output = context.createImageData(w, h);
     var dst = output.data;
+
     var alphaFac = opaque ? 1 : 0;
     for (var y=0; y<h; y++) {
         for (var x=0; x<w; x++) {

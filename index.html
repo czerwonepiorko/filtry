@@ -3,57 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Image filters</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2">
-
-                <ul>
-                    <li><input id="imageLoader" type="file" /></li>
-                    <li>
-                    </li>
-                </ul>
-
-            </div>
-            <div class="col-md-5">
+<div class="container">
+    <div class="row">
+        <input id="imageLoader" class="hidden" type="file"/>
+        <div class="col-md-12">
+            <div class="text-center">
                 <canvas id="imageCanvas" width="550" height="600"></canvas>
             </div>
-            <div class="col-md-5">
-
-              <!--  <img id="image" src="img/vitalic_voyager.jpeg" width="550" height="600" /> -->
-
-
-                <!-- <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
-                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
-                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
-                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
-                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
-                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
-                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
-                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
-                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
-                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button>
-                <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-info">Averaging</button> -->
-
-            </div>
         </div>
-        <!-- <input id="reset" class="btn btn-danger" type="button" value="Reset" /> -->
-      <button onclick="Reset()" class="btn btn-warning" value="Reset">Reset</button>
-        <button onclick="btnGrayscale();" class="btn btn-info">Grayscale</button>
-        <button onclick="btnBrightness();" class="btn btn-info">Brightness</button>
-        <button onclick="btnThreshold();" class="btn btn-info">Threshold</button>
-        <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-success">USREDNIAJACY</button>
-        <button onclick="btnCustom(SOBEL_POZIOMY);" class="btn btn-success">SOBEL_POZIOMY</button>
-        <button onclick="btnCustom(SOBEL_PIONOWY);" class="btn btn-success">SOBEL_PIONOWY</button>
-        <button onclick="btnCustom(KOLOWY);" class="btn btn-danger">DYLATACJA</button>
-        <!-- <button onclick="btnCustom(LP2);" class="btn btn-info">LP2</button> -->
-        <!-- <button onclick="btnCustom(LP3);" class="btn btn-info">LP3</button> -->
     </div>
 
-    <script src="js/filters2.js" type="application/javascript"></script>
+    <button onclick="document.getElementById('imageLoader').click();" class="btn btn-warning" value="Reset">Upload file</button>
+    <button onclick="Reset()" class="btn btn-warning" value="Reset">Reset</button>
+    <button onclick="btnGrayscale();" class="btn btn-info">Grayscale</button>
+    <button onclick="btnBrightness();" class="btn btn-info">Brightness</button>
+    <button onclick="btnThreshold();" class="btn btn-info">Threshold</button>
+    <button onclick="btnCustom(USREDNIAJACY);" class="btn btn-success">USREDNIAJACY</button>
+    <button onclick="btnCustom(SOBEL_POZIOMY);" class="btn btn-success">SOBEL_POZIOMY</button>
+    <button onclick="btnCustom(SOBEL_PIONOWY);" class="btn btn-success">SOBEL_PIONOWY</button>
+    <button onclick="btnCustom(KOLOWY);" class="btn btn-danger">DYLATACJA</button>
+    <!-- <button onclick="btnCustom(LP2);" class="btn btn-info">LP2</button> -->
+    <!-- <button onclick="btnCustom(LP3);" class="btn btn-info">LP3</button> -->
+     <button id="opaque" onclick="opaque = !opaque;document.getElementById('opaqueText').textContent = opaque.toString()" class="btn btn-info">Opaque <span id="opaqueText"></span></button>
+</div>
+
+<script src="js/filters2.js" type="application/javascript"></script>
 
 </body>
 </html>
