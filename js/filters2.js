@@ -140,3 +140,41 @@ var KOLOWY = [  0, 1, 1, 1, 0,
 var MEDIAN = [  1, 1, 1,
                 1,  1, 1,
                 1, 1, 1];
+
+var algorithmHoaresa = function(array){
+
+    var i = 0;
+    var j = (array.length - 1);
+    var w = j / 2;
+    var k;
+
+    while (i !== j) {
+        k = partition(array,i,j);
+        k = k - i + 1;
+        if(k >= w) j = i + k - 1;
+        if(k < w){
+            w -= k;
+            i += k;
+        }
+    }
+
+    return array[i];
+};
+
+
+var partition = function(array,a,b){
+    var tmp;
+    var e = array[a];
+
+    while (a < b){
+        while ((a < b) && (array[b] >= e)) b--;
+        while ((a < b) && (array[b] < e)) b--;
+        if(a < b){
+            tmp = array[a];
+            array[a] = array[b];
+            array[b] = tmp;
+        }
+    }
+
+    return a;
+};
